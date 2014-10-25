@@ -10,7 +10,7 @@ waterfall([task1, task2, ... taskN], result)
 Next function params.
 
 ```javascript
-next(error, arg1 ... argN)
+next(error, arg1, ... argN)
 ```
 
 Example without errors.
