@@ -13,13 +13,14 @@
     }
   };
   
-  function waterfall(tasks, result) {
+  var waterfall = function(tasks, result) {
     var next = function() {
       var fn = tasks.shift();
       var args = Array.prototype.slice.call(arguments, 0);
       var error = args.shift();
   
       if (typeof fn === 'undefined' || error === true) {
+        args.unshift(error);
         typeof result === 'function' && result.apply(null, args);
         return;
       }
@@ -31,7 +32,7 @@
     };
     
     next(false);
-  }
+  };
   
   if (typeof define !== 'undefined' && define.amd) {
     define([], function () {
