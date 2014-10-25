@@ -31,7 +31,7 @@ waterfall([
 });
 ```
 
-Wxample with produced error.
+Example with produced error.
 
 ```javascript
 waterfall([
